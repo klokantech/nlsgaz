@@ -1,61 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>NLS Gazeteer</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="author" content="Petr Pridal - Klokan Technologies GmbH">
-  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-  <script src="index.js"></script>
-  <style type="text/css" media="screen">
-  	.ac-renderer {
-	  position: absolute;
-	  width: 350px;
-	  background-color: #fff;
-	  border: 1px solid #666;
-	  -moz-box-shadow: 2px 2px 2px rgba(102, 102, 102, .4);
-	  -webkit-box-shadow: 2px 2px 2px rgba(102, 102, 102, .4);
-	}
+  <head>
+    <title>NLS Gazetteer</title>
+    <link rel="stylesheet" href="build/autocomplete.css">
+    <script src="http://localhost:9810/compile?id=nlsgaz-debug"></script>
+    <!--<script src="build/index.js"></script>-->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  </head>
+  <body>
+    <h1>NLS Gazetteer + County/Parish selector</h1>
 
-	.ac-row {
-	  position: relative;
-	  padding: .4em;
-	  cursor: pointer;
-	}
-
-	.ac-highlighted {
-	  font-weight: bold;
-	}
-
-	.ac-active {
-	  background-color: #b2b4bf;
-	}
-
-	.ac-type {
-	  background-color: #990033;
-	  color: #FFFFFF;
-	  display: block;
-	  margin: 2px;
-	  padding: 2px;
-	  font-style: italic;
-	  float: right;
-	}
-  </style>
-</head>
-<body>
-  <h1>NLS Gazetteer</h1>
-  <p>
-      <form id="nlsgazform">
+    <form id="nlsgazform">
       <b>Gazetteer / NRG:</b> <input type="search" placeholder="Find a place ..." autocomplete="off" id="nlsgaz"></input> or 
       <b>County:</b> <select id="county"></select>
       <span id="parish_span">
-      <b>Parish:</b> <select id="parish"></select>
+        <b>Parish:</b> <select id="parish"></select>
       </span>
-      </form>
-
+    </form>
     <div id="log">
-	</div>
-  </p>
+    </div>
 
-  <script>nlsgaz(function(minx,miny,maxx,maxy){ alert(minx + ' ' + miny + ' ' + maxx + ' ' + maxy);});</script>
-</body>
+    <script>nlsgaz(function(minx, miny, maxx, maxy) {
+        alert(minx + ' ' + miny + ' ' + maxx + ' ' + maxy);
+      });</script>
+  </body>
 </html>

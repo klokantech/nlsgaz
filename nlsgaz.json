@@ -1,0 +1,33 @@
+{
+  "id": "nlsgaz",
+
+  "inputs": ["src/main.js"],
+  "paths": ["src"],
+
+  "externs": [
+    "//google_maps_api_v3.js" // for geocoder
+  ],
+
+  "define": {
+    "goog.DEBUG": false
+  },
+
+  "mode": "ADVANCED",
+  "level": "VERBOSE",
+
+  "checks": {
+    "accessControls": "ERROR",
+    "visibility": "ERROR",
+    "checkTypes": "ERROR",
+    "checkRegExp": "ERROR",
+    "checkVars": "ERROR",
+    "deprecated": "ERROR",
+    "fileoverviewTags": "ERROR",
+    "invalidCasts": "ERROR",
+    "missingProperties": "ERROR",
+    "nonStandardJsDocs": "ERROR",
+    "undefinedVars": "ERROR"
+  },
+
+  "jsdoc-html-output-path": "."
+}

@@ -4,7 +4,7 @@
  *
  * @author petr.pridal@klokantech.com (Petr Pridal)
  *
- * Copyright 2011 Klokan Technologies Gmbh (www.klokantech.com)
+ * Copyright 2015 Klokan Technologies Gmbh (www.klokantech.com)
  */
 
 goog.provide('nlsgaz');
@@ -20,7 +20,7 @@ goog.require('goog.debug.Logger');
 goog.require('goog.dom');
 goog.require('goog.events.EventType');
 // goog.require('goog.ui.AutoComplete.OSGaz');
-goog.require('goog.ui.AutoComplete.GoogleGeocoder');
+goog.require('goog.ui.ac.AutoComplete.GoogleGeocoder');
 
 goog.require('countyparish');
 
@@ -101,9 +101,9 @@ nlsgaz = function( callback ) {
 
   // Initialize gazeteer search
   var input = goog.dom.getElement('nlsgaz');
-  var ac = new goog.ui.AutoComplete.GoogleGeocoder(input);
+  var ac = new goog.ui.ac.AutoComplete.GoogleGeocoder(input);
 
-  ac.addEventListener(goog.ui.AutoComplete.EventType.UPDATE, function(e) {
+goog.events.listen(ac, goog.ui.ac.AutoComplete.EventType.UPDATE, function(e) {
     var bounds = e.row['geometry']['viewport'] // ['bounds'];
     // logger.info('SELECT: ' + bounds);
     callback(bounds.getSouthWest().lng(),

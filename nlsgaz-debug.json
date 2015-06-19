@@ -1,0 +1,12 @@
+{
+  "id": "nlsgaz-debug",
+  "inherits": "nlsgaz.json",
+  "mode": "ADVANCED",
+
+  "define": {
+    "goog.DEBUG": true
+  },
+
+  "pretty-print": true,
+  "debug": true
+}
