@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NLS Gazetteer</title>
+  <script src="closure-library/closure/goog/base.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script src="deps.js"></script>
+  <script>
+    goog.require("nlsgaz");
+  </script>
+  <link rel="stylesheet" href="autocomplete.css">
+</head>
+<body>
+  <h1>NLS Gazetteer + County/Parish selector</h1>
+  <p>
+      <form id="nlsgazform">
+      <b>Gazetteer / NRG:</b> <input type="search" placeholder="Find a place ..." autocomplete="off" id="nlsgaz"></input> or 
+      <b>County:</b> <select id="county"></select>
+      <span id="parish_span">
+      <b>Parish:</b> <select id="parish"></select>
+      </span>
+      </form>
+	
+	
+    <div id="log">
+	</div>
+  </p>
+
+  <script>nlsgaz(function(minx,miny,maxx,maxy){ alert(minx + ' ' + miny + ' ' + maxx + ' ' + maxy);});</script>
+</body>
+</html>
