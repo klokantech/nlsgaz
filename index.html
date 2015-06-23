@@ -11,7 +11,10 @@
     <h1>NLS Gazetteer + County/Parish selector</h1>
 
     <form id="nlsgazform">
-      <b>Gazetteer / NRG:</b> <input type="search" placeholder="Find a place ..." autocomplete="off" id="nlsgaz"></input> or 
+      <b>Gazetteer / NRG:</b> <input type="search" placeholder="Find a place ..." autocomplete="off" id="nlsgaz"></input> 
+      <input type="radio" name="nlsgazarea" value="uk" checked>uk 
+      <input type="radio" name="nlsgazarea" value="">world
+      or 
       <b>County:</b> <select id="county"></select>
       <span id="parish_span">
         <b>Parish:</b> <select id="parish"></select>

@@ -69,9 +69,12 @@ goog.ui.ac.AutoComplete.GoogleGeocoder = function(input) {
 
     // HACK!!! NLS: If it is national grid then do not autocomplete
     if (token.replace(/\s/g,'').match(ngrid) !== null) return matchCallback(token, []);
-
-    // HACK!!! NLS: Search in UK only
-    geocoder.geocode( { 'address': token+', UK' }, function(results, status) {
+   //NLS: Search in UK or World
+   var nlsgazarea = document.querySelector('input[name="nlsgazarea"]:checked');
+   if(nlsgazarea){
+     var area = ', ' + nlsgazarea.value;
+   }
+    geocoder.geocode( { 'address': token + area }, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         matchCallback(token, results);
       }
