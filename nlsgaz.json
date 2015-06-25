@@ -1,11 +1,12 @@
 {
   "id": "nlsgaz",
+  "output-wrapper": "(function(){%output%})();",
 
   "inputs": ["src/main.js"],
   "paths": ["src"],
 
   "externs": [
-    "//google_maps_api_v3.js" // for geocoder
+    "//jquery-1.8.js"
   ],
 
   "define": {
