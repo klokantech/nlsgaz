@@ -76,6 +76,12 @@ kt.NominatimMatcher = function(opt_url, opt_payload) {
 */
 kt.NominatimMatcher.prototype.requestMatchingRows =
     function(token, maxMatches, matchHandler) {
+      
+  //HACK NLS: If it is national grid then do not autocomplete
+  var ngrid = /^([A-Z]{2})([0-9]+)$/i;
+  if (token.replace(/\s/g,'').match(ngrid) !== null){
+    return matchHandler(token, []);
+  }
 
   this.payload_['q'] = token;
   this.payload_['format'] = 'json';

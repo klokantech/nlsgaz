@@ -108,5 +108,23 @@ nlsgaz = function( callback ) {
   ac.registerCallback(function(bnds) {
     callback(bnds[0], bnds[1], bnds[2], bnds[3]);
   });
+  
+  //Listen submit of form
+  goog.events.listen(goog.dom.getElement('nlsgazform'),
+    goog.events.EventType.SUBMIT, function(e) {
+      e.preventDefault();
+      //test for the National Grid Reference
+      var ngrid = /^([A-Z]{2})([0-9]+)$/i;
+      var m = input.value.replace(/\s/g,'').match(ngrid);
+      if (m !== null) {
+        callback(m[1].toUpperCase()+m[2]);
+      } else {
+        ac.search(input.value, 1, function(token, matched) {
+          var bnds = matched[0]['bounds'];
+          callback(bnds[0], bnds[1], bnds[2], bnds[3]);
+        });
+      }
+    });
+  
 };
 window['nlsgaz'] = nlsgaz;

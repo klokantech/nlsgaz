@@ -1,5 +1,5 @@
 PLOVR_VERSION=2.0.0
-PLOVR=plovr-2.0.0.jar
+PLOVR=../plovr-2.0.0.jar
 
 .PHONY: all plovr build serve lint webserver
 
