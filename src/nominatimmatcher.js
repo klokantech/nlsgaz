@@ -44,7 +44,7 @@ kt.NominatimMatcher = function(opt_url, opt_payload) {
   * @type {string}
   * @private
   */
-  this.url_ = opt_url || 'http://open.mapquestapi.com/nominatim/v1/search';
+  this.url_ = opt_url || 'http://nominatim.klokantech.com/';
 
   /**
   * The list of extra parameters for the Jsonp request
