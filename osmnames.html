@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="https://cdn.klokantech.com/osmnames/v1/autocomplete.js"></script>
+    <link href="https://cdn.klokantech.com/osmnames/v1/autocomplete.css" rel="stylesheet" />
+  </head>
+  <body>
+    Search: <input placeholder="Find a place ..." autocomplete="off" id="nlsgaz" type="text" />
+    <input type="radio" name="nlsgazarea" onclick="javascript:osmnamesautocomplete.setCountryCode('gb');">gb
+    <input type="radio" name="nlsgazarea" onclick="javascript:osmnamesautocomplete.setCountryCode();" checked>world
+    <pre id="result"></pre>
+    <script>
+      var osmnamesautocomplete = new kt.OsmNamesAutocomplete(
+          'nlsgaz', 'https://nlsgaz.klokantech.com/');
+      osmnamesautocomplete.registerCallback(function(item) {
+        document.getElementById('result').innerHTML = JSON.stringify(item, ' ', 2);
+      });
+    </script>
+  </body>
+</html>
