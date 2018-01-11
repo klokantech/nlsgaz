@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>NLS Gazetteer</title>
-    <link rel="stylesheet" href="build/autocomplete.css">
+    <script src="https://cdn.klokantech.com/osmnames/v1/autocomplete.js"></script>
+    <link href="https://cdn.klokantech.com/osmnames/v1/autocomplete.css" rel="stylesheet" />
     <script src="http://localhost:9810/compile?id=nlsgaz-debug"></script>
     <!--<script src="build/index.js"></script>-->
   </head>
@@ -10,10 +11,10 @@
     <h1>NLS Gazetteer + County/Parish selector</h1>
 
     <form id="nlsgazform">
-      <b>Gazetteer / NRG:</b> <input type="search" placeholder="Find a place ..." autocomplete="off" id="nlsgaz"></input> 
-      <input type="radio" name="nlsgazarea" value="uk" checked>uk 
+      <b>Gazetteer / NRG:</b> <input type="search" placeholder="Find a place ..." autocomplete="off" id="nlsgaz"></input>
+      <input type="radio" name="nlsgazarea" value="uk" checked>uk
       <input type="radio" name="nlsgazarea" value="">world
-      or 
+      or
       <b>County:</b> <select id="county"></select>
       <span id="parish_span">
         <b>Parish:</b> <select id="parish"></select>
